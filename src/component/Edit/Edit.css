@@ -1,0 +1,19 @@
+.wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    margin: 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #A3C4BC;
+  }
+
+
+
+  input {
+    padding: 3% 4%;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #cfcfcf;
+  }
