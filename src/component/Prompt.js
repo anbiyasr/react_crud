@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import Home from './Home/Home'
+import Root from '../Routes/Root'
 
 class Prompt extends Component{
     constructor(props){
@@ -40,7 +40,7 @@ class Prompt extends Component{
                 {
                     this.state.showComponent
                     ?
-                    <Home />
+                    <Root />
                     :
                     alert('kode salah', window.location.reload(false))
                 }

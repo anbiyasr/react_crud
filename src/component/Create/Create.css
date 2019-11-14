@@ -143,6 +143,7 @@ input.error {
   font-weight: lighter;
   letter-spacing: 1px;
   margin-bottom: 0.25em;
+  text-decoration: 'none';
 }
 .createAccount li {
   background-color: #519e8a;

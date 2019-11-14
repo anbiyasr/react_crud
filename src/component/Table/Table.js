@@ -1,10 +1,11 @@
 import React from 'react';
 import MaterialTable from 'material-table';
+import TableRowColumn from 'material-ui/Table'
 import Edit from '../Edit/Edit';
 import { useHistory } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 // import Icon from '@material-ui/core/Icon';
 
 const useStyles = makeStyles(theme => ({
@@ -42,9 +43,9 @@ export default function Table() {
   
   return (
     <div>
-    <Button variant="contained" className={classes.button} onClick={handleClick}>
+    {/* <Button variant="contained" className={classes.button} onClick={handleClick}>
         Edit
-    </Button>
+    </Button> */}
     <MaterialTable
       title="DATA DIRI"
       columns={state.columns}
@@ -66,7 +67,6 @@ export default function Table() {
             },
              600);
           }),
-
         onRowDelete: oldData =>
           new Promise(resolve => {
             setTimeout(() => {
@@ -77,8 +77,25 @@ export default function Table() {
               window.localStorage.setItem("data", JSON.stringify(data))
             }, 600);
           }),
+          onRowUpdate: (newData, oldData) =>
+          new Promise(resolve => {
+            setTimeout(() => {
+              resolve();
+              {/* handleClick(); */}
+              const data = [...state.data];
+              data[data.indexOf(oldData)] = newData;
+              setState({ ...state, data });
+              window.localStorage.setItem("data", JSON.stringify(data))
+            }, 600);
+          }),
       }}
     />
+    <Button variant="contained" className={classes.button} onClick={handleClick}>
+        Edit
+    </Button>
+    <p>
+    <Link to='/'>Home</Link>
+    </p>
     </div>
   );
 }

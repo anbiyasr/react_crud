@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import './Create.css';
+import { Link } from 'react-router-dom';
 
 
 
-
-const emailRegex = RegExp(
-  /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-);
+// const emailRegex = RegExp(
+//   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+// );
 
 const formValid = ({ formErrors, ...rest }) => {
   let valid = true;
@@ -63,6 +63,8 @@ class Create extends Component {
           }
         ]
       },alert('berhasil menyimpan'))
+      
+      // alert('ini contoh')
     }
 
      
@@ -72,6 +74,7 @@ class Create extends Component {
   storage = e => {
 
     localStorage.setItem("data", JSON.stringify(this.state.data))
+    
   }
 
   handleChange = e => {
@@ -102,12 +105,6 @@ class Create extends Component {
     this.setState({ formErrors, [name]: value }, () => console.log(this.state));
   };
 
-  //   const {name , value} = e.target
-  //   this.setState({
-  //     [name]: value }
-  //     )
-
-  // }
 
   handleDel = e => {
     e.preventDefault();
@@ -128,8 +125,6 @@ class Create extends Component {
     console.log('didupdate')
 
       this.storage();
-
-
     
   }
 
@@ -197,8 +192,15 @@ class Create extends Component {
               )}
           </div>
           <div className="createAccount">
-            <button type="submit" onClick={this.handleSubmit}> SIMPAN </button>
+            <button type="submit" onClick={this.handleSubmit} >
+              {/* <Link to="/Table"> */}
+              SIMPAN 
+              {/* </Link> */}
+            </button>
             <button type="submit" onClick={this.handleDel}> HAPUS SEMUA </button>
+              <Link to="/">
+              Halaman Utama
+              </Link>
           </div>
         </form>
       </div>
