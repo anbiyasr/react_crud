@@ -81,12 +81,12 @@ export default function Table() {
           new Promise(resolve => {
             setTimeout(() => {
               resolve();
-              {/* handleClick(); */}
-              const data = [...state.data];
+              handleClick();
+              {/* const data = [...state.data];
               data[data.indexOf(oldData)] = newData;
               setState({ ...state, data });
-              window.localStorage.setItem("data", JSON.stringify(data))
-            }, 600);
+              window.localStorage.setItem("data", JSON.stringify(data)) */}
+            }, 100);
           }),
       }}
     />

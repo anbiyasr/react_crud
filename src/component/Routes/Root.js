@@ -1,10 +1,12 @@
 import React, { Component, Fragment } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import Table from "../component/Table/Table";
-import Create from "../component/Create/Create";
-import Edit from "../component/Edit/Edit";
-import Home from "../component/Home/Home";
-import TabContoh from "../component/Home/TabContoh";
+import Table from "../Table/Table";
+import Create from "../Create/Create";
+import Edit from "../Edit/Edit";
+import Home from "../Home/Home";
+import TabContoh from "../Home/TabContoh";
+import Login from "../Login/Login";
+import Register from "../Register/Register";
 // import './App.css';
 // import ReactDOM from "react-dom";
 // import PropTypes from 'prop-types';
@@ -36,10 +38,12 @@ class Root extends Component {
               <Switch>
                 <Home exact path="/" component={Home} />
                 {/* <Route exact path="/Home1" Component={Home1} /> */}
-                <Route path="/TabContoh" component={TabContoh} />
-                <Route path="/Create" component={Create} />
-                <Route path="/Table" component={Table} />
-                <Route path="/Edit" component={Edit} />
+                <Route path="/tabContoh" component={TabContoh} />
+                <Route path="/create" component={Create} />
+                <Route path="/table" component={Table} />
+                <Route path="/edit" component={Edit} />
+                <Route path="/login" component={Login} />
+                <Route path="/register" component={Register} />
               </Switch>
             </Fragment>
             )

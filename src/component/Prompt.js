@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import Root from '../Routes/Root'
+import Root from '../component/Routes/Root'
 
 class Prompt extends Component{
     constructor(props){
@@ -11,25 +11,25 @@ class Prompt extends Component{
         }
     }
 
-    componentDidMount(){
-        let kode = prompt('masukan password')
-        // let count = 0
-        console.log(`kode = ${kode}`)
-        // console.log(`count = ${count}`)
-        if (kode === 'admin') {
-            this.setState({
-                showComponent: true
-            })
-        } 
-        else {
-            this.setState({
-                showComponent : false,
-                // count: this.count+1
-            })
-        }
+    // componentDidMount(){
+    //     let kode = prompt('masukan password')
+    //     // let count = 0
+    //     console.log(`kode = ${kode}`)
+    //     // console.log(`count = ${count}`)
+    //     if (kode === 'admin') {
+    //         this.setState({
+    //             showComponent: true
+    //         })
+    //     } 
+    //     else {
+    //         this.setState({
+    //             showComponent : false,
+    //             // count: this.count+1
+    //         })
+    //     }
 
         
-    }
+    // }
 
 
 

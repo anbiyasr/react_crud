@@ -52,7 +52,7 @@ export default function Home1() {
       </CardContent>
       <CardActions>
         <Button size="small">
-            <Link to="/TabContoh">
+            <Link to="/login">
             Start
             </Link>
             </Button>

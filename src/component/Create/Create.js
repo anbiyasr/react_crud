@@ -1,12 +1,16 @@
 import React, {Component} from 'react';
 import './Create.css';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 
 
 // const emailRegex = RegExp(
 //   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 // );
+//  const test = ({}) => {
+//   let history = useHistory();
+//  }
+  
 
 const formValid = ({ formErrors, ...rest }) => {
   let valid = true;
@@ -23,7 +27,7 @@ const formValid = ({ formErrors, ...rest }) => {
 
   return valid;
 };
-
+  // let history = useHistory();
 class Create extends Component {
 
   
@@ -42,7 +46,7 @@ class Create extends Component {
     }
 
   }
-  
+
   handleSubmit = e => {
     e.preventDefault();
     if ((this.state.nama,
@@ -63,11 +67,13 @@ class Create extends Component {
           }
         ]
       },alert('berhasil menyimpan'))
-      
+      setTimeout( () => {
+        <Link to="/table" />
+      }, 600)      
       // alert('ini contoh')
     }
 
-     
+
 
   }
 
@@ -197,7 +203,8 @@ class Create extends Component {
               SIMPAN 
               {/* </Link> */}
             </button>
-            <button type="submit" onClick={this.handleDel}> HAPUS SEMUA </button>
+            <button type="submit" onClick={this.handleDel}>
+               HAPUS SEMUA </button>
               <Link to="/">
               Halaman Utama
               </Link>
